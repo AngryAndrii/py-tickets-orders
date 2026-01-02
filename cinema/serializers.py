@@ -98,7 +98,6 @@ class TakenPlaceSerializer(serializers.Serializer):
 class MovieSessionDetailSerializer(MovieSessionSerializer):
     movie = MovieListSerializer(many=False, read_only=True)
     cinema_hall = CinemaHallSerializer(many=False, read_only=True)
-    tickets = TicketSerializer(many=True, read_only=True)
 
     taken_places = serializers.SerializerMethodField()
 
@@ -109,7 +108,6 @@ class MovieSessionDetailSerializer(MovieSessionSerializer):
             "show_time",
             "movie",
             "cinema_hall",
-            "tickets",
             "taken_places",
         )
 
